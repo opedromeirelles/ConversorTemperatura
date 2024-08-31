@@ -77,38 +77,38 @@ namespace ConversorTemperatura
             if (cbTemperatura.Text == "CELSIUS")
             {
                 double valorTemp = double.Parse(txtValorTemp.Text, CultureInfo.CurrentCulture);
-                celsius.setCel(valorTemp);
+                celsius.TempCelsius = valorTemp;
 
-                kelvin.convKelCel(celsius.getCel());
-                fahrenheit.convFahCel(celsius.getCel());
+                kelvin.convKelCel(celsius.TempCelsius);
+                fahrenheit.convFahCel(celsius.TempCelsius);
 
-                txtValorConv1.Text = Math.Round(fahrenheit.getFah(), 2).ToString();
-                txtValorConv2.Text = Math.Round(kelvin.getKel(), 2).ToString();
+                txtValorConv1.Text = Math.Round(fahrenheit.TempFahrenheit, 2).ToString();
+                txtValorConv2.Text = Math.Round(kelvin.TempKelvin, 2).ToString();
 
 
             }
             else if (cbTemperatura.Text == "KELVIN")
             {
                 double valorTemp = double.Parse(txtValorTemp.Text, CultureInfo.CurrentCulture);
-                kelvin.setKel(valorTemp);
+                kelvin.TempKelvin = valorTemp;
 
-                fahrenheit.convFahKel(kelvin.getKel());
-                celsius.convCelKel(kelvin.getKel());
+                fahrenheit.convFahKel(kelvin.TempKelvin);
+                celsius.convCelKel(kelvin.TempKelvin);
 
-                txtValorConv1.Text = Math.Round(fahrenheit.getFah(), 2).ToString();
-                txtValorConv2.Text = Math.Round(celsius.getCel(), 2).ToString();
+                txtValorConv1.Text = Math.Round(fahrenheit.TempFahrenheit, 2).ToString();
+                txtValorConv2.Text = Math.Round(celsius.TempCelsius, 2).ToString();
 
             }
             else
             {
                 double valorTemp = double.Parse(txtValorTemp.Text, CultureInfo.CurrentCulture);
-                fahrenheit.setFah(valorTemp);
+                fahrenheit.TempFahrenheit = valorTemp;
 
-                celsius.convCelFah(fahrenheit.getFah());
-                kelvin.convKelFah(fahrenheit.getFah());
+                celsius.convCelFah(fahrenheit.TempFahrenheit);
+                kelvin.convKelFah(fahrenheit.TempFahrenheit);
 
-                txtValorConv1.Text = Math.Round(kelvin.getKel(), 2).ToString();
-                txtValorConv2.Text = Math.Round(celsius.getCel(), 2).ToString();
+                txtValorConv1.Text = Math.Round(kelvin.TempKelvin, 2).ToString();
+                txtValorConv2.Text = Math.Round(celsius.TempCelsius, 2).ToString();
 
             }
 

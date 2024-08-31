@@ -8,7 +8,20 @@ namespace ConversorTemperatura
 {
     internal class ClassKelvin
     {
-        public double kel { get; set; }
+        private double _kel;
+
+        public double TempKelvin
+        {
+            get
+            {
+                return _kel;
+            }
+
+            set
+            {
+                _kel = value;
+            }
+        }
 
         public ClassKelvin()
         {
@@ -18,22 +31,14 @@ namespace ConversorTemperatura
         //CONVERSÕES DE X PARA KELVIN
         public void convKelCel(double cel)
         {
-            this.kel = cel + 273.15;
+            this.TempKelvin = cel + 273.15;
         }
 
         public void convKelFah(double fah)
         {
-            this.kel = (fah - 32) * 5 / 9 + 273.15;
+            this.TempKelvin = (fah - 32) * 5 / 9 + 273.15;
         }
 
-        //get - set
-        public double getKel()
-        {
-            return this.kel;
-        }
-        public void setKel(double valor)
-        {
-            this.kel = valor;
-        }
+        
     }
 }

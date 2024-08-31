@@ -9,7 +9,20 @@ namespace ConversorTemperatura
 {
     internal class ClassCelsius
     {
-        public double cel { get; set; }
+        private double _cel;
+
+        public double TempCelsius
+        {
+            get
+            {
+                return _cel;
+            }
+
+            set
+            {
+                _cel = value;
+            }
+        }
         public ClassCelsius()
         {
             
@@ -19,23 +32,12 @@ namespace ConversorTemperatura
 
         public void convCelKel(double kel)
         {
-            this.cel = kel - 275.15;
+            this.TempCelsius = kel - 275.15;
         }
 
         public void convCelFah(double fah)
         {
-            this.cel = (fah - 32) * 5 / 9;
-        }
-
-
-        //get - set
-        public double getCel()
-        {
-            return this.cel;
-        }
-        public void setCel(double valor)
-        {
-            this.cel = valor;
+            this.TempCelsius = (fah - 32) * 5 / 9;
         }
 
     }

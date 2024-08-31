@@ -8,7 +8,20 @@ namespace ConversorTemperatura
 {
     internal class ClassFahrenheit
     {
-        public double fah { get; set; }
+        private double _fah;
+
+        public double TempFahrenheit
+        {
+            get
+            {
+                return _fah;
+            }
+
+            set
+            {
+                _fah = value;
+            }
+        }
         public ClassFahrenheit()
         {
             
@@ -17,22 +30,13 @@ namespace ConversorTemperatura
         //CONVERSÕES DE X PARA FAHRENHEIT
         public void convFahCel(double cel)
         {
-            this.fah = (cel * 9 / 5) + 32;
+            this.TempFahrenheit = (cel * 9 / 5) + 32;
         }
 
         public void convFahKel(double kel)
         {
-            this.fah = (kel - 275.15) * 9 / 5 + 32;
+            this.TempFahrenheit = (kel - 275.15) * 9 / 5 + 32;
         }
-
-        //get - set
-        public double getFah()
-        {
-            return this.fah;
-        }
-        public void setFah(double valor)
-        {
-            this.fah = valor;
-        }
+                
     }
 }
